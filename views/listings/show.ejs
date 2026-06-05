@@ -1,0 +1,37 @@
+<% layout("/layouts/bieloer") %>
+<style>
+a{
+    text-decoration: none;
+    font-weight:700;
+    color:rgb(255, 0, 183)
+}
+li{
+    font-weight:900;
+}
+
+
+
+button {
+  border: 4px solid;
+  border-image-source: linear-gradient(45deg, #e90000, #010df2);
+  border-image-slice: 1; /* Required to make the gradient visible across the border */
+}
+</style>
+<body>
+    <h3>.All listings </h3>
+    <br>
+    <ul>
+        <li> <%= listing.title %> </li>
+        <li> <%= listing.description %> </li>
+        <li> ₹ <%= listing.price.toLocaleString("en-IN") %> </li>
+        <li> <%= listing.location %> </li>
+        <li> <%= listing.country %> </li>
+    </ul>
+    <a href="/listings/<%= listing.id%>/eidtis">edit this listing</a>
+    <br>
+    <br>
+
+    <form method="POST" action="/listings/<%= listing._id %>?_method=DELETE">
+        <button type="submit">Delete this post</button>
+    </form>
+</body>
