@@ -1,5 +1,6 @@
  <% layout("./layouts/bieloer.ejs") %>
 <body>
+    <br>
     <h3>Create new listings</h3>
     <form action="/listings" method="POST">
         <div class="mb-3">
@@ -12,22 +13,25 @@
         </div>
         <div class="mb-3">
             <label for="image" class="form-label">Image url</label>
-            <input type="text" placeholder="enter image url" min="0" name="listing[price]" class="form-control">
+            <input type="text" placeholder="enter image url" min="0" name="listing[image]" class="form-control">
         </div>
-        <div class="mb-3">
-            <label for="price" class="form-label">Price</label>
-            <input type="number" placeholder="enter price" min="0" name="listing[price]" class="form-control">
-        </div>
+        <div class="row">
+            <div class="mb-3 col-md-4">
+                <label for="price" class="form-label">Price</label>
+                <input type="number" placeholder="enter price" min="0" name="listing[price]" class="form-control">
+            </div>
 
-        <div class="mb-3">
-            <label for="location" class="form-label">Location</label>
-            <input type="text" placeholder="enter location" name="listing[location]" class="form-control">
+            <div class="mb-3 col-md-8">
+                <label for="location" class="form-label">Location</label>
+                <input type="text" placeholder="enter location" name="listing[location]" class="form-control">
+            </div>
         </div>
         <div class="mb-3">
             <label for="country" class="form-label">Country</label>
             <input type="text" placeholder="enter country" name="listing[country]" class="form-control">
         </div>
         <br><br>
-        <button class="btn btn-dark">create</button>
+        <button class="btn btn-dark newbtn">create</button>
     </form>
+    <br><br>
 </body>
