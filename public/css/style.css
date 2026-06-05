@@ -16,9 +16,11 @@
 .f-info-links a:hover{
     text-decoration: underline;
 }
-.f-info-links .f-info-socials {
+.f-info-links, .f-info-socials {
     width:100%;
 }
+
+
 
 .f-info-socials i{
     font-size: 1.2rem;
@@ -41,7 +43,7 @@
     margin-bottom: 2rem;
 }
 
-.car-img-top{
+.card-img-top{
     border-radius: 1rem !important;
     width:100% !important;
     object-fit: cover !important;

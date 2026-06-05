@@ -10,8 +10,8 @@ const listingSchema = new Schema({
     description:String,
     img:{
         type:String,
-        default:"https://www.clipartmax.com/middle/m2i8H7H7b1b1A0d3_block-of-flats-cartoon/",
-        set:(v)=>v==="" ? "https://www.clipartmax.com/middle/m2i8H7H7b1b1A0d3_block-of-flats-cartoon/" : v
+        default:"https://www.travelandleisure.com/thmb/x8L30CdZCZAe8a1LmIOnJcBJXhQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TAL-USE-header-exterior-sign-flat-iron-hotel-asheville-FLATIRONASH0524-28ee8bc1cfed48ae80f2db1ccf02a7fd.jpg",
+        set:(v)=>v==="" ? "https://www.travelandleisure.com/thmb/x8L30CdZCZAe8a1LmIOnJcBJXhQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TAL-USE-header-exterior-sign-flat-iron-hotel-asheville-FLATIRONASH0524-28ee8bc1cfed48ae80f2db1ccf02a7fd.jpg" : v
     },
     price:Number,
     location:String,

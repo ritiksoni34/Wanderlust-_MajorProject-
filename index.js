@@ -81,23 +81,6 @@ app.get("/listings/:id", async (req,res)=>{
     res.render("listings/show.ejs",{ listing });
 })
 
-
-// app.get("/test",(req,res)=>{
-//     let testSchema = new Listing({
-//         title:"My new villa",
-//         descreption:"By the beach",
-//         price:200000,
-//         location:"calanguate, Goa",
-//         country:"India"
-//     });
-//     testSchema.save().then(()=>{
-//         console.log("schema saved")
-//     }).catch((err)=>{
-//         console.log(err);
-//     })
-//     res.send("saved");
-// })
-
 app.listen(port,()=>{
     console.log(`server is running on http://localhost:${port}`)
 })
