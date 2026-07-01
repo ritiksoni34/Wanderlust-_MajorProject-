@@ -1,8 +1,16 @@
+body{
+    display: flex;
+    flex-direction:column;
+    min-height:100vh;
+}
+.container{
+    flex:1;
+}
 .navbar{
     background-color: white;
 }
 .fa-compass{
-    color:#fe244d;
+    color:#fe424d;
     font-size: 2rem;
 }
 .nav-link{
@@ -69,4 +77,23 @@
 .card-img-overlay:hover{
     opacity: 0.2;
     background-color: #ebebeb;
+}
+
+/* new page */
+.newbtn{
+    background-color: #fe424d !important;
+    border: none !important;
+}
+/* show image */
+
+.show-img{
+    height:30vh;
+}
+.btns{
+    display:flex;
+}
+
+.show-card{
+    padding-left: 0;
+    padding-right: 0 ;
 }
