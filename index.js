@@ -46,10 +46,14 @@ app.get("/listings/new",(req,res)=>{
 
 //save to database
 app.post("/listings",async (req,res)=>{
-    let listing = req.body.listing;
-    const newlisting = new Listing(listing);
-    await newlisting.save();
-    res.redirect("listings");
+    try{
+        let listing = req.body.listing;
+        const newlisting = new Listing(listing);
+        await newlisting.save();
+        res.redirect("listings");
+    }catch(err){
+        next(err);
+    }
 })
 
 //Edit route
@@ -60,9 +64,9 @@ app.get("/listings/:id/eidtis",async (req,res)=>{
 })
 
 //update route
-app.put("/listings/:id",(req,res)=>{
+app.put("/listings/:id",async(req,res,next)=>{
     let { id } = req.params;
-    Listing.findByIdAndUpdate(id , {...req.body.listing})
+    await Listing.findByIdAndUpdate(id , {...req.body.listing})
     res.redirect(`/listings/${id}`);
 })
 
@@ -79,6 +83,11 @@ app.get("/listings/:id", async (req,res)=>{
     let {id} = req.params;
     const listing = await Listing.findById(id);
     res.render("listings/show.ejs",{ listing });
+})
+
+// middelware
+app.use((err,req,res,next)=>{
+    res.send("something is wrong")
 })
 
 app.listen(port,()=>{
