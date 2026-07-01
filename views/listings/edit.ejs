@@ -4,7 +4,8 @@
 
 <h3>Edit Listing</h3>
 
-<form method="POST" action="/listings/<%= listing._id %>?_method=PUT">
+
+<form method="POST" action="/listings/<%= listing._id %>?_method=PUT" novalidate class="needs-validation">
 
     <div class="mb-3">
         <label for="title" class="form-label">Title</label>
@@ -13,7 +14,10 @@
             value="<%= listing.title %>"
             name="listing[title]"
             class="form-control"
-        >
+            required
+            >
+            <div class="valid-feedback">looks good title</div>
+            <div class="invalid-feedback">Fill title</div>
     </div>
 
     <div class="mb-3">
@@ -21,7 +25,10 @@
         <textarea
             name="listing[description]"
             class="form-control"
+            required
         ><%= listing.description %></textarea>
+        <div class="valid-feedback">looks good description</div>
+        <div class="invalid-feedback">Fill description</div>
     </div>
 
     <div class="mb-3">
@@ -31,7 +38,9 @@
             value="<%= listing.image.url %>"
             name="listing[image][url]"
             class="form-control"
+            required
         >
+        <div class="invalid-feedback">Fill Image URL</div>
     </div>
 
     <div class="row">
@@ -44,7 +53,10 @@
                 min="0"
                 name="listing[price]"
                 class="form-control"
+                required
             >
+            <div class="valid-feedback">looks good Price</div>
+        <div class="invalid-feedback">Fill Price</div>
         </div>
 
         <div class="mb-3 col-md-8">
@@ -54,7 +66,10 @@
                 value="<%= listing.location %>"
                 name="listing[location]"
                 class="form-control"
+                required
             >
+            <div class="valid-feedback">looks good Location</div>
+        <div class="invalid-feedback">Fill Location</div>
         </div>
 
     </div>
@@ -66,7 +81,10 @@
             value="<%= listing.country %>"
             name="listing[country]"
             class="form-control"
+            required
         >
+        <div class="valid-feedback">looks good Country</div>
+        <div class="invalid-feedback">Fill Country</div>
     </div>
     <br><br>
 
@@ -77,3 +95,4 @@
 </form>
 
 <br><br>
+<script src="/js/script.js"></script>
